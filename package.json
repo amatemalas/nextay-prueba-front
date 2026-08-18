@@ -1,8 +1,8 @@
 {
-  "name": "nextray-prueba-front",
+  "name": "nextay-prueba-front",
   "version": "0.0.1",
   "description": "A Quasar Project",
-  "productName": "Nextray Prueba Técnica",
+  "productName": "Nextay Prueba Técnica",
   "author": "Adrián Matemalas <amatemalas@gmail.com>",
   "type": "module",
   "private": true,

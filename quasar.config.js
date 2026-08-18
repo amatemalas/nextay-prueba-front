@@ -222,7 +222,7 @@ export default defineConfig((/* ctx */) => {
       builder: {
         // https://www.electron.build/configuration
 
-        appId: 'nextray-prueba-front',
+        appId: 'nextay-prueba-front',
       },
     },
 
