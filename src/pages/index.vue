@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" />
 
-        <q-toolbar-title> Nextray </q-toolbar-title>
+        <q-toolbar-title> Nextay </q-toolbar-title>
         <div>Prueba técnica</div>
       </q-toolbar>
     </q-header>
