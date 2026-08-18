@@ -114,6 +114,13 @@ const ratesColumns = [
   },
 ]
 
+/**
+ * Formats a numeric value as EUR currency using the es-ES locale.
+ * Returns an em-dash for nullish values.
+ *
+ * @param {number|null|undefined} value - The price to format.
+ * @returns {string} Locale-formatted currency string or '—'.
+ */
 function formatPrice(value) {
   if (value == null) return '—'
   return new Intl.NumberFormat('es-ES', {
@@ -122,11 +129,19 @@ function formatPrice(value) {
   }).format(value)
 }
 
+/**
+ * Formats an ISO date string into a short date using the es-ES locale.
+ *
+ * @param {string|null|undefined} value - ISO date string to format.
+ * @returns {string} Locale-formatted date or '—' when falsy.
+ */
 function formatDate(value) {
   if (!value) return '—'
   return new Date(value).toLocaleDateString('es-ES')
 }
 
+// Fetch summary and latest rates on mount. Each request is handled independently
+// so a failure in one does not prevent the other from loading.
 onMounted(async () => {
   try {
     summary.value = await fetchRoomTypesSummary()

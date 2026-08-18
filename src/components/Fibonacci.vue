@@ -52,11 +52,19 @@ const rawInput = ref('')
 
 const MAX_N = 1000
 
+/** Persists the raw string from the q-input into rawInput for validation. */
 function onInput(val) {
   rawInput.value = String(val ?? '')
 }
 
+/** Convenience boolean — true when errorMsg is non-empty. */
 const hasError = computed(() => errorMsg.value !== '')
+/**
+ * Validates the raw input and returns a Spanish-language error string,
+ * or an empty string when the value is valid.
+ *
+ * Rules: non-empty → must be a finite integer → must be ≥ 0 → must be ≤ MAX_N.
+ */
 const errorMsg = computed(() => {
   const raw = rawInput.value.trim()
 
@@ -77,6 +85,10 @@ const errorMsg = computed(() => {
   return ''
 })
 
+/**
+ * Computes the Fibonacci sequence for the current input.
+ * Returns an empty array when the input is empty or invalid.
+ */
 const sequence = computed(() => {
   const raw = rawInput.value.trim()
   if (raw === '') return []
