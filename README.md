@@ -1,38 +1,24 @@
-# Nextray Prueba Técnica (nextray-prueba-front)
+# Nextray Prueba Técnica — Frontend
 
-## Install the dependencies
+## Cómo levantarlo
 
 ```bash
 pnpm install
-# or: yarn/npm/bun install
+pnpm run dev
 ```
 
-### Start the app in development mode (HMR, error reporting, etc.)
+Necesitas Node >= 22.12 y el backend Laravel funcionando. Por defecto apunta a `http://nextay-prueba-back.test/api`. Si necesitas cambiar la URL, edita en el `.env` la variable `VITE_API_BASE_URL`.
 
-```bash
-quasar dev
-```
+## Decisiones
 
-### Format & Lint the files
+- **Sin TypeScript**: es un proyecto pequeño, por lo que se ha optado por una instalación por defecto sin typescript.
+- **Sin store** (Pinia/Vuex): cada componente maneja su estado solo, no hay nada que compartir.
+- **fetch nativo** en vez de Axios: son dos endpoints, no hace falta un wrapper.
+- **BigInt** en Fibonacci: F(80) ya se pasa de `Number.MAX_SAFE_INTEGER`, así que devuelvo strings.
+- **Proxy de Vite** para no tener que configurar CORS del lado de Laravel.
 
-```bash
-pnpm run lint
-# or: yarn/npm/bun run lint
-```
+## Qué dejé sin hacer
 
-...or just check formatting & linting:
-
-```bash
-pnpm run lint:check
-# or: yarn/npm/bun run lint:check
-```
-
-### Build the app for production
-
-```bash
-quasar build
-```
-
-### Customize the configuration
-
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-file).
+- **Paginación**: las tablas muestran todo. Si crece el dataset hay que habilitar el paginador de `q-table`.
+- **Tests**: no escribí ninguno. A esta escala la revisión manual bastó.
+- **Auth**: la app es pública. Si tuviera login habría que meter navigation guards, algún tipo de sistema de token Bearer o similar.
