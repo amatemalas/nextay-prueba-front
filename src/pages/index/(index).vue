@@ -1,17 +1,11 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="column items-center">
-      <img
-        alt="Quasar logo"
-        src="~@/assets/quasar-logo-vertical.svg"
-        style="width: 200px; height: 200px"
-      />
-
-      <q-btn class="q-mt-md" color="primary" to="/second" label="Go to Second Page" no-caps />
-    </div>
+  <q-page class="flex flex-row flex-between flex-middle">
+    <Fibonacci />
+    <RoomTypes />
   </q-page>
 </template>
 
 <script setup>
-//
+import Fibonacci from '../../components/Fibonacci.vue'
+import RoomTypes from '../../components/RoomTypes.vue'
 </script>

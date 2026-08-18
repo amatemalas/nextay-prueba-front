@@ -50,7 +50,18 @@ export default defineConfig((/* ctx */) => {
       // minify: false,
       // distDir
 
-      // extendViteConf (viteConf) {},
+      extendViteConf(viteConf) {
+        viteConf.server = {
+          ...viteConf.server,
+          proxy: {
+            '/api': {
+              target: process.env.VITE_API_BASE_URL || 'http://nextay-prueba-back.test/api',
+              changeOrigin: true,
+              rewrite: (path) => path.replace(/^\/api/, ''),
+            },
+          },
+        }
+      },
       // viteVuePluginOptions: {},
 
       vitePlugins: [
