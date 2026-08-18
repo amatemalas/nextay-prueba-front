@@ -1,4 +1,4 @@
-# Nextray Prueba Técnica — Frontend
+# Nextay Prueba Técnica — Frontend
 
 ## Cómo levantarlo
 
