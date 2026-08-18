@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-between flex-middle">
+  <q-page class="flex flex-row flex-between flex-middle">
     <Fibonacci />
     <!-- <DatabaseLogger /> -->
   </q-page>
