@@ -1,4 +1,4 @@
-# AGENTS.md — nextray-prueba-front
+# AGENTS.md — nextay-prueba-front
 
 ## Stack
 
